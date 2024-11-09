@@ -1,0 +1,12 @@
+/* ウェブフォントを使用する場合はここに定義を追加して下さい */
+
+@font-face {
+    font-family: "PixelMplus10";
+    src: url("../../data/others/PixelMplus10-Regular.woff2") format("woff2"),
+	    url("../../data/others/PixelMplus10-Regular.woff") format("woff"),
+        url("../../data/others/PixelMplus10-Regular.ttf") format("opentype");
+       
+    font-weight: normal;
+    font-style: normal;
+}
+
