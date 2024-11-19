@@ -9,5 +9,5 @@
 [locate x=700 y=300]
 [button graphic="ranger.png" storage="first.ks"  target="*first"][r]
 [locate x=700 y=500]
-[button graphic="gambler.png" storage="first.ks"  target="*first"][r]
+[button graphic="gambler.png" storage="gambler.ks"  target="*gambler"][r]
 [s]
