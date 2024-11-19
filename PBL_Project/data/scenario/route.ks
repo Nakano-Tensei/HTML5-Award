@@ -1,0 +1,11 @@
+*route
+[cm]
+[locate x=100 y=300]
+[button graphic="hero.png" storage="first.ks"  target="*first" ][r]
+[locate x=100 y=500]
+[button graphic="majic.png" storage="first.ks"  target="*first"][r]
+[locate x=700 y=300]
+[button graphic="ranger.png" storage="first.ks"  target="*first"][r]
+[locate x=700 y=500]
+[button graphic="gambler.png" storage="first.ks"  target="*first"][r]
+[s]

@@ -6,14 +6,19 @@
 [image layer="base" page="fore" storage="../bgimage/title_base.png"   ]
 
 [locate x=300 y=380]
-[button graphic="start.png" target="*first"]
+[button graphic="start.png" storage="route.ks"  target="*route" ]
 
 [locate x=300 y=520]
-[button graphic="restart.png" target="*first"  ]
+[button graphic="restart.png"  target="*first"  ]
 
 [s]
 
+
+
+
+
 *first
+
 [cm]
 [mask]
 [bg storage="black.png" ]
@@ -24,7 +29,7 @@
 [freeimage layer=1 ]
 
 @layopt layer = message0 visible="true" 
-メッセージウィンドウが下に表示されましたね？[r][l]
+メッセージウィンドウが下に表示されましたね???？[r][l]
 ここにメッセージが表示されています。[r][l]
 ここにメッセージが表示されています。[cm][l]
 
