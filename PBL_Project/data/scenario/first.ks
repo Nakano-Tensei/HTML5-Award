@@ -1,4 +1,5 @@
 *start
+[call storage="macro.ks" cond="tf.first == undefined"]
 *title
 
 @layopt layer=message0 visible=false
@@ -6,10 +7,10 @@
 [image layer="base" page="fore" storage="../bgimage/title_base.png"   ]
 
 [locate x=300 y=380]
-[button graphic="start.png" storage="route.ks"  target="*route" ]
+[button graphic="start.png" storage="route.ks"  target="*route"  ]
 
 [locate x=300 y=520]
-[button graphic="restart.png"  target="*first"  ]
+[button graphic="restart.png"  target="*first" ]
 
 [s]
 
