@@ -35,29 +35,11 @@
 
 
 [bg storage="cave1.jpg" ]
-背景が変わりました。[l][r]
-
-
-ここから物語を展開させます。[p]
-
-
-[chara_new name="tensei" storage="tensei.png" jname="てんせい"  ]
-[chara_show name="tensei" ]
-てんせいが現れた!![l][cm]
-
-[chara_hide name="tensei" ]
-てんせいは去っていった...[l][cm]
-
-先へ進もう[l][cm]
 [bg storage="branch.jpg" ]
 分かれ道だ[l][cm]
 どちらに進もうか[l][cm]
 [locate x=400 y=100]
 [button graphic="east.png" storage="scene1.ks"  target="*select1" ][r]
-
-[locate x=400 y=300]
-[button graphic="west.png" storage="scene2.ks"  target="*select2" ][r]
-[s]
 
 
 
