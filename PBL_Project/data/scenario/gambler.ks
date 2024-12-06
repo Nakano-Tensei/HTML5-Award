@@ -65,9 +65,8 @@
 [s]
 
 *select2_1_1
-/*ここにモンスター出現の効果音*/
-[chara_new name="suke" storage="suke.png" jname="スケルトン" ]
-[chara_show name="suke" ]
+[chara_new name="suke_0" storage="suke_0.png" jname="スケルトン" ]
+[chara_show name="suke_0" ]
 スケルトンをみつけた！[l][r]
 まだこちらには気づいていないようだ。[l][cm]
 
@@ -77,32 +76,84 @@
 [button graphic="huiuti.png" target="*select2_2_1" ][r]
 
 [locate x=400 y=300]
-[button graphic="no_battle.png" target="*select2_2" ][r]
+[button graphic="no_battle.png" target="*select2_2_2" ][r]
 
 [s]
 
 *select2_1_2
 [cm]
-[chara_new name="suke" storage="suke.png" jname="スケルトン" ]
-[chara_show name="suke" ]
+[chara_new name="suke_0" storage="suke_0.png" jname="スケルトン" ]
+[chara_show name="suke_0" ]
 スケルトンがあらわれた！[l][cm]
 
 [locate x=400 y=100]
-[button graphic="attack.png" target="*select2_2" ][r]
+[button graphic="attack.png" target="*select2_2_3" ][r]
 
 [locate x=400 y=300]
-[button graphic="no_battle.png" target="*select2_2" ][r]
+[button graphic="no_battle.png" target="*select2_2_2" ][r]
 
 [s]
 
 *select2_2_1
 [cm]
 ふいうちをしかけた！[l][r]
+[getrand min="1" max="100"]
+[if exp="tf.rand <= 90"]
+ふりかぶったナイフがほねを砕く！[l][r]
+[jump target="*select2_2_3"]
+[else]
+気づかれた！ふいうちは失敗だ！[l][cm]
+[jump target="*select2_1_2"]
+[endif]
+[s]
 
-
-
-
-*select2_2
+*select2_2_2
 [cm]
-あいつが、滅海王...！？[l][cm]
+[chara_hide name="suke_0" ]
+...なんとかやりすごせたようだ。[l][r]
+[jump target="*select2_3"]
+[s]
 
+
+*select2_2_3
+[cm]
+[chara_hide name="suke_0" ]
+スケルトンをたおした！[l][cm]
+[jump target="*select2_3"]
+[s]
+
+*select2_3
+[cm]
+さきに進もう。[l][cm]
+[bg storage="dungeon1.jpg" ]
+道がふたつに分かれている。[l][r]
+どちらに進もうか。[l][cm]
+
+[locate x=400 y=100]
+[button graphic="east.png" target="*select3_1" ][r]
+
+[locate x=400 y=300]
+[button graphic="west.png" target="*select3_2" ][r]
+
+[s]
+*select3_1
+[cm]
+[chara_new name="box" storage="box3.png" jname="box" ]
+[chara_show name="box"]
+宝箱を見つけた！[l][cm]
+
+しかし罠の可能性もある。[l][r]
+開けるべきだろうか？[l][cm]
+
+[s]
+
+*select3_2
+[cm]
+[chara_new name="box" storage="box3.png" jname="box" ]
+[chara_show name="box"]
+宝箱を見つけた！[l][cm]
+
+しかし罠の可能性もある。[l][r]
+開けるべきだろうか？[l][cm]
+
+[s]
