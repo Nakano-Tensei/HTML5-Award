@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{"project_dir":"","view":{"checkDebugPreview":{"type":"checkbox","val":false},"selectDebugPos":{"type":"select","val":"bottom"}},"map_watch":{},"pobj":{"path":"C:\\Users\\s-nakai\\Desktop\\HTML5-Award作業用\\PBL_Project","project_id":"tyranoproject","title":"PBL_Project","type":"tyrano"},"rules":[],"map_font":{},"vmaker_config":{"version":6},"scene_config":{"default":{"template_map_name":"map_template","sky":"1"}}}
-=======
-{"project_dir":"","view":{"checkDebugPreview":{"type":"checkbox","val":false},"selectDebugPos":{"type":"select","val":"bottom"}},"map_watch":{},"pobj":{"path":"C:\\Users\\k-oodoi\\HTML5-Award\\PBL_Project","project_id":"tyranoproject","title":"PBL_Project","type":"tyrano"},"rules":[],"map_font":{},"vmaker_config":{"version":6},"scene_config":{"default":{"template_map_name":"map_template","sky":"1"}}}
->>>>>>> da0b9cac21b973f11b6cecc6efab0f56884b6ed0
+{"project_dir":"","view":{"checkDebugPreview":{"type":"checkbox","val":true},"selectDebugPos":{"type":"select","val":"bottom"}},"map_watch":{},"pobj":{"path":"C:\\Users\\k-oodoi\\Downloads\\tyranoscript_v600beta4","project_id":"tyranoproject","title":"ティラノスクリプト","type":"tyrano"},"rules":[],"map_font":{},"vmaker_config":{},"scene_config":{}}
