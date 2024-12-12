@@ -1,56 +1,110 @@
 // Firestore SDKのインポート
-import { doc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+import { doc, updateDoc, increment, setDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 import { db } from "./firebase-config.js";
 
+// Firestoreのdpointを初期値0にリセットする関数
+window.resetDpointToZero = async function () {
+    const ganDocRef = doc(db, "pbl", "gan"); // コレクション名とドキュメントIDを指定
+    try {
+        await setDoc(ganDocRef, { dpoint: 0 }, { merge: true }); // merge: true で他のフィールドは維持
+        console.log("dpointを初期値0にリセットしました！");
+    } catch (e) {
+        console.error("Firestoreのリセットエラー:", e);
+    }
+};
 
-// dpointフィールドを増減する関数
-async function updateDpoint(changeValue) {
+// dpointフィールドを増減し、結果をティラノスクリプトに表示する関数
+window.updateDpoint = async function (changeValue) {
     const ganDocRef = doc(db, "pbl", "gan");
 
     try {
+        // dpointフィールドの増減
         await updateDoc(ganDocRef, {
             dpoint: increment(changeValue)
         });
-        console.log(`dpointを${changeValue > 0 ? "増加" : "減少"}させました: ${changeValue}`);
-        return `dpointを${changeValue > 0 ? "増加" : "減少"}しました！`;
+
+        // 結果メッセージの生成
+        const result = `dpointを${changeValue > 0 ? "増加" : "減少"}しました！`;
+        console.log(result);
+
+        // ティラノスクリプトに結果を表示
+        tyrano.plugin.kag.ftag.startTag('text', { text: result });
     } catch (e) {
         console.error("Firestoreエラー:", e);
-        return "エラーが発生しました。";
-    }
-}
 
-// dpointの更新結果をティラノスクリプトに直接返すラッパー
-window.updateDpointWrapper = async function (changeValue) {
-    const result = await updateDpoint(changeValue);
-    // ティラノスクリプトに結果を表示する
-    tyrano.plugin.kag.ftag.startTag('text', { text: result });
+        // エラー発生時のメッセージを表示
+        const errorMessage = "エラーが発生しました。";
+        tyrano.plugin.kag.ftag.startTag('text', { text: errorMessage });
+    }
 };
 
 // dpointの現在値を取得する関数
 import { getDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
-async function getDpoint() {
+// Firestoreからdpoint値を取得し、結果を返す
+window.getDpointValue = async function () {
     const ganDocRef = doc(db, "pbl", "gan");
     try {
         const docSnap = await getDoc(ganDocRef);
         if (docSnap.exists()) {
-            return `現在のdpoint: ${docSnap.data().dpoint}`;
+            return docSnap.data().dpoint; // dpointの値を返す
         } else {
-            return "ドキュメントが存在しません。";
+            return null; // ドキュメントが存在しない場合
         }
     } catch (e) {
         console.error("Firestoreエラー:", e);
-        return "エラーが発生しました。";
+        return null; // エラーの場合
     }
-}
-
-// dpointの現在値を取得して表示するラッパー
-window.getDpointWrapper = async function () {
-    const result = await getDpoint();
-    // ティラノスクリプトに結果を表示する
-    tyrano.plugin.kag.ftag.startTag('text', { text: result });
 };
 
-// 関数をグローバルスコープに登録
-window.updateDpoint = updateDpoint;
-window.getDpoint = getDpoint;
+// Firestoreのmygoldを初期値0にリセットする関数
+window.resetMygoldToZero = async function () {
+    const ganDocRef = doc(db, "pbl", "gan"); // コレクション名とドキュメントIDを指定
+    try {
+        await setDoc(ganDocRef, { mygold: 0 }, { merge: true }); // merge: true で他のフィールドは維持
+        console.log("mygoldを初期値0にリセットしました！");
+    } catch (e) {
+        console.error("Firestoreのリセットエラー:", e);
+    }
+};
+
+// mygoldフィールドを増減し、結果をティラノスクリプトに表示する関数
+window.updateMygold = async function (changeValue) {
+    const ganDocRef = doc(db, "pbl", "gan");
+
+    try {
+        // mygoldフィールドの増減
+        await updateDoc(ganDocRef, {
+            mygold: increment(changeValue)
+        });
+
+        // 結果メッセージの生成
+        const result = `mygoldを${changeValue > 0 ? "増加" : "減少"}しました！`;
+        console.log(result);
+
+        // ティラノスクリプトに結果を表示
+        tyrano.plugin.kag.ftag.startTag('text', { text: result });
+    } catch (e) {
+        console.error("Firestoreエラー:", e);
+
+        // エラー発生時のメッセージを表示
+        const errorMessage = "エラーが発生しました。";
+        tyrano.plugin.kag.ftag.startTag('text', { text: errorMessage });
+    }
+};
+
+// Firestoreからmygold値を取得し、結果を返す
+window.getMygoldValue = async function () {
+    const ganDocRef = doc(db, "pbl", "gan");
+    try {
+        const docSnap = await getDoc(ganDocRef);
+        if (docSnap.exists()) {
+            return docSnap.data().mygold; // dpointの値を返す
+        } else {
+            return null; // ドキュメントが存在しない場合
+        }
+    } catch (e) {
+        console.error("Firestoreエラー:", e);
+        return null; // エラーの場合
+    }
+};
