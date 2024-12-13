@@ -45,7 +45,7 @@
 [cm]
 [eval exp="updateDpoint(1)"]
 ; Firestoreからdpoint値を取得して変数に格納
-[eval exp="getDpointValue().then((value) => tyrano.plugin.kag.variable.tf.dpoint = value)"]
+@set_dpoint
 ; dpointの値で条件分岐
 [if exp="tf.dpoint >= 5"]
     [jump storage="DeadEnd.ks" target="*END_G1" ]
@@ -184,7 +184,9 @@ f.mygold=0
 宝箱を開けると中から少量の金が出てきた！[l][r]
 [delay speed="150" ]
 [eval exp="updateMygold(10)" ]
-現在の所持金：[eval exp="getMygoldValue().then((value) => tyrano.plugin.kag.variable.tf.mygold = value)"] Ｇ[l][cm]
+@set_mygold
+現在の所持金：[emb exp="tf.mygold"] Ｇ[l][r]
+___________________[l][cm]
 [jump target="*select3_2_2" ][l]
 [s]
 
