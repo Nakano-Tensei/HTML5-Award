@@ -9,4 +9,11 @@ if (mp['var']) eval(mp['var'] + ' = ' + tf.rand)
 [endscript]
 [endmacro]
 [eval exp="tf.first = 1"]
+
+[macro name="mygold"]
+[iscript]
+f.mygold = f.mygold + mp.gold
+[endscript]
+現在の所持金：[emb exp="f.mygold" ] G[l][cm]
+[endmacro]
 [return]

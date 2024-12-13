@@ -78,6 +78,11 @@
         <script src="./tyrano/plugins/kag/kag.tag_ar.js"></script>
         <script src="./tyrano/plugins/kag/kag.tag_three.js"></script>
         <script src="./tyrano/plugins/kag/kag.tag.js"></script>
+        <script type="module" src="./data/others/firestore-functions.js"></script>
+        <script type="module" src="./data/others/firestore-functions2.js"></script>
+        <script type="module" src="./data/others/firestore-functions3.js"></script>
+        <script type="module" src="./data/others/firestore-functions4.js"></script>
+        <script type="module" src="./data/others/firestore-functions5.js"></script>
 
         <!-- Others -->
         <link href="./tyrano/libs/textillate/assets/animate.css" rel="stylesheet" />
@@ -119,7 +124,32 @@
             <button data-remodal-action="cancel" id="remodal-cancel" class="remodal-cancel">Cancel</button>
             <button data-remodal-action="confirm" id="remodal-confirm" class="remodal-confirm">OK</button>
         </div>
+        <script type="module">
+            // Firebase SDKのインポート
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
+            import { getFirestore } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
         
+            // Firebaseの設定
+            const firebaseConfig = {
+                apiKey: "AIzaSyDL3iuvOS63Yi0SlBylSYS11LRyq1iNZ1E",
+                authDomain: "pblhtml.firebaseapp.com",
+                projectId: "pblhtml",
+                storageBucket: "pblhtml.appspot.com",
+                messagingSenderId: "74803271017",
+                appId: "1:74803271017:web:bb52165f580b1d5764d9f8",
+                measurementId: "G-7TYY4EVZNR"
+            };
+        
+            // Firebaseの初期化
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+            const db = getFirestore(app);
+        
+            console.log("Firebase initialized successfully!");
+
+            export {db};
+        </script>
         
         
         
