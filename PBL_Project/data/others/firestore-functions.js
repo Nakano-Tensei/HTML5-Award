@@ -1,5 +1,6 @@
 // Firestore SDKのインポート
 import { doc, updateDoc, increment, setDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+import { getDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 import { db } from "./firebase-config.js";
 
 // Firestoreのdpointを初期値0にリセットする関数
@@ -38,23 +39,27 @@ window.updateDpoint = async function (changeValue) {
     }
 };
 
-// dpointの現在値を取得する関数
-import { getDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
-
-// Firestoreからdpoint値を取得し、結果を返す
-window.getDpointValue = async function () {
-    const ganDocRef = doc(db, "pbl", "gan");
-    try {
-        const docSnap = await getDoc(ganDocRef);
-        if (docSnap.exists()) {
-            return docSnap.data().dpoint; // dpointの値を返す
-        } else {
-            return null; // ドキュメントが存在しない場合
+// Firestoreからdpointを取得し、tf.dpointに格納するカスタムタグ
+tyrano.plugin.kag.tag.set_dpoint = {
+    async start(pm) {
+        const ganDocRef = doc(db, "pbl", "gan");
+        try {
+            // Firestoreからドキュメントを取得
+            const docSnap = await getDoc(ganDocRef);
+            if (docSnap.exists()) {
+                // dpointをtf変数に格納
+                tyrano.plugin.kag.variable.tf.dpoint = docSnap.data().dpoint;
+                console.log(`dpointを取得しました: ${docSnap.data().dpoint}`);
+            } else {
+                console.warn("Firestore: ドキュメントが存在しません。");
+                tyrano.plugin.kag.variable.tf.dpoint = null; // 初期化
+            }
+        } catch (e) {
+            console.error("Firestoreエラー:", e);
+            tyrano.plugin.kag.variable.tf.dpoint = null; // 初期化
         }
-    } catch (e) {
-        console.error("Firestoreエラー:", e);
-        return null; // エラーの場合
-    }
+        this.kag.ftag.nextOrder(); // 次の命令へ移行
+    },
 };
 
 // Firestoreのmygoldを初期値0にリセットする関数
@@ -93,18 +98,25 @@ window.updateMygold = async function (changeValue) {
     }
 };
 
-// Firestoreからmygold値を取得し、結果を返す
-window.getMygoldValue = async function () {
-    const ganDocRef = doc(db, "pbl", "gan");
-    try {
-        const docSnap = await getDoc(ganDocRef);
-        if (docSnap.exists()) {
-            return docSnap.data().mygold; // dpointの値を返す
-        } else {
-            return null; // ドキュメントが存在しない場合
+// Firestoreからmygoldを取得し、tf.mygoldに格納するカスタムタグ
+tyrano.plugin.kag.tag.set_mygold = {
+    async start(pm) {
+        const ganDocRef = doc(db, "pbl", "gan");
+        try {
+            // Firestoreからドキュメントを取得
+            const docSnap = await getDoc(ganDocRef);
+            if (docSnap.exists()) {
+                // dpointをtf変数に格納
+                tyrano.plugin.kag.variable.tf.mygold = docSnap.data().mygold;
+                console.log(`mygoldを取得しました: ${docSnap.data().mygold}`);
+            } else {
+                console.warn("Firestore: ドキュメントが存在しません。");
+                tyrano.plugin.kag.variable.tf.mygold = null; // 初期化
+            }
+        } catch (e) {
+            console.error("Firestoreエラー:", e);
+            tyrano.plugin.kag.variable.tf.mygold = null; // 初期化
         }
-    } catch (e) {
-        console.error("Firestoreエラー:", e);
-        return null; // エラーの場合
-    }
+        this.kag.ftag.nextOrder(); // 次の命令へ移行
+    },
 };
