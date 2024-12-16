@@ -8,6 +8,8 @@
 [position layer=message0 page=fore frame="frame1.png" margint="65" marginl="50" marginr="90" marginb="60"]
 [cm]
 [freeimage layer=1 ]
+[eval exp="resetDpointToZero()"]
+[eval exp="resetMygoldToZero()"]
 
 @layopt layer = message0 visible="true" 
 ...[r][l]
@@ -41,9 +43,18 @@
 
 *select1_1
 [cm]
-[eval exp="updateDpointWrapper(1)"]
-すこし時間をおいた。[l][cm]
-[jump target="*select1_1_1" ]
+[eval exp="updateDpoint(1)"]
+; Firestoreからdpoint値を取得して変数に格納
+@set_dpoint
+; dpointの値で条件分岐
+[if exp="tf.dpoint >= 5"]
+    [jump storage="DeadEnd.ks" target="*END_G1" ]
+[else]
+[delay speed="150" ]
+    すこし時間をおいた。[l][cm]
+    [resetdelay]
+    [jump target="*select1_1_1" ]
+[endif]
 [s]
 
 *select1_1_1
@@ -171,12 +182,17 @@ f.mygold=0
 [cm]
 [chara_hide name="box0" ]
 宝箱を開けると中から少量の金が出てきた！[l][r]
-[mygold gold="50"]
-[jump target="*select3_2_2" ]
+[delay speed="150" ]
+[eval exp="updateMygold(10)" ]
+@set_mygold
+現在の所持金：[emb exp="tf.mygold"] Ｇ[l][r]
+___________________[l][cm]
+[jump target="*select3_2_2" ][l]
 [s]
 
 *select3_2_2
 [cm]
+[resetdelay]
 分かれ道までもどろう。[l][cm]
 [chara_hide name="box0" ]
 [jump target="*select3_2_3" ]
