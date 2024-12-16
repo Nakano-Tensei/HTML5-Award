@@ -1,7 +1,9 @@
 *route
 [cm]
-[locate x=100 y=300 ]
-[button graphic="hero.png" storage="RouteTree.ks" target="*RouteTree"][r]
+
+[locate x=100 y=300]
+[button graphic="hero.png" storage="sensi.ks"  target="*hazime" ][r]
+
 [locate x=100 y=500]
 
 [button graphic="majic.png" storage="mahou.ks"  target="*mahou"][r]
