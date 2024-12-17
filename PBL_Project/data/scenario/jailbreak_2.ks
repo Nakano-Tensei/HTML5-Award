@@ -17,8 +17,8 @@
 進んでみるか.[l][cm]
 [wait time="2000" ]
 
-[link target="*select1"]【１】選択肢  その１[endlink][r]
-[link target="*select2"]【２】選択肢  その２[endlink][r]
+[link target="*select1"]進む[endlink][r]
+[link target="*select2"]調べる[endlink][r]
 [s]
 
 *select1
