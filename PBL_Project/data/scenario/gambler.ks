@@ -1,7 +1,10 @@
 *gambler
+[plugin name="popopo"]
 [call storage="macro.ks"]
+[popopo frequency="C"]
 [cm]
 [mask]
+[fadeoutbgm time=3000]
 [bg storage="black.png" ]
 [mask_off]
 [position layer=message0 width=900 height=400 top=400 left=70 ]
@@ -37,10 +40,10 @@
 *check1_1
 [cm]
 [locate x=400 y=100]
-[button graphic="return1.png" target="*select1_1" ][r]
+[button graphic="return1.png" target="*select1_1" clickse="../bgm/決定ボタンを押す1.mp3" ][r]
 
 [locate x=400 y=300]
-[button graphic="go1.png" target="*select1_2" ][r]
+[button graphic="go1.png" target="*select1_2" clickse="../bgm/決定ボタンを押す1.mp3" ][r]
 
 [s]
 
@@ -62,10 +65,10 @@
 *select1_1_1
 [cm]
 [locate x=400 y=100]
-[button graphic="return1.png" target="*select1_1" ][r]
+[button graphic="return1.png" target="*select1_1" clickse="../bgm/決定ボタンを押す1.mp3" ][r]
 
 [locate x=400 y=300]
-[button graphic="go1.png" target="*select1_2" ][r]
+[button graphic="go1.png" target="*select1_2" clickse="../bgm/決定ボタンを押す1.mp3" ][r]
 [s]
 
 *select1_2
@@ -88,17 +91,17 @@
 スケルトンがあらわれた！[r][l]
 [cm]
 なんてことはないあいてだ。[r][l]
-どうするべきだろうか？[r][l]
+どうする？[r][l]
 [cm]
 [layopt layer=message0 visible=false]
 [locate x=100 y=300]
-[button graphic="attack.png" target="*select1_2_1" ][r]
+[button graphic="attack.png" target="*select1_2_1" clickse="../bgm/決定ボタンを押す1.mp3" ][r]
 
 [locate x=750 y=300]
-[button graphic="no_battle.png" target="*select1_2_2" ][r]
+[button graphic="no_battle.png" target="*select1_2_2" clickse="../bgm/決定ボタンを押す1.mp3" ][r]
 
 [locate x=410 y=550]
-[button graphic="unmei.png" target="*select1_2_3" ][r]
+[button graphic="unmei.png" target="*select1_2_3" clickse="../bgm/決定ボタンを押す1.mp3" ][r]
 [s]
 
 *select1_2_1
@@ -111,6 +114,7 @@
 骨の塊がバラバラとくずれていく。[l][r]
 [chara_hide name="suke_A" ]
 [cm]
+[playbgm storage="8bit-ME_Victory01.ogg" loop="false" ]
 スケルトンをたおした！[r][l]
 [cm]
 まだまだ先は長い。進もう。[r][l]
@@ -222,13 +226,13 @@
 先程の男の言うとおり右にいくべきだろうか？[r][l]
 [layopt layer=message0 visible=false]
 [locate x=100 y=300]
-[button graphic="left.png" target="**select2_2_2" ][r]
+[button graphic="left.png" target="**select2_2_2" clickse="../bgm/決定ボタンを押す1.mp3" ][r]
 
 [locate x=750 y=300]
-[button graphic="right.png" target="**select2_2_1" ][r]
+[button graphic="right.png" target="**select2_2_1" clickse="../bgm/決定ボタンを押す1.mp3" ][r]
 
 [locate x=410 y=550]
-[button graphic="unmei.png" target="**select2_2_3" ][r]
+[button graphic="unmei.png" target="**select2_2_3" clickse="../bgm/決定ボタンを押す1.mp3" ][r]
 [s]
 
 *select2_2_1
@@ -245,13 +249,13 @@
 罠の可能性もあるが開けるべきだろうか？
 [layopt layer=message0 visible=false]
 [locate x=100 y=300]
-[button graphic="open.png" target="*select2_2_1_1" ][r]
+[button graphic="open.png" target="*select2_2_1_1" clickse="../bgm/決定ボタンを押す1.mp3" ][r]
 
 [locate x=750 y=300]
-[button graphic="noopen.png" target="*select2_2_1_2" ][r]
+[button graphic="noopen.png" target="*select2_2_1_2" clickse="../bgm/決定ボタンを押す1.mp3" ][r]
 
 [locate x=410 y=550]
-[button graphic="unmei.png" target="*select2_2_1_3" ][r]
+[button graphic="unmei.png" target="*select2_2_1_3" clickse="../bgm/決定ボタンを押す1.mp3" ][r]
 [s]
 
 *select2_2_1_1
@@ -317,7 +321,7 @@
 *select2_2_1_3
 [cm]
 [getrand min="1" max="100"]
-[if exp="tf.rand <= 80"][jump target="*select2_2_1_1"]
+[if exp="tf.rand <= 50"][jump target="*select2_2_1_1"]
 [else][jump target="*select2_2_1_2"]
 [endif]
 [s]
@@ -332,6 +336,30 @@
 [layopt layer=message0 visible=false]
 [quake count=3 time=3000]
 [layopt layer=message0 visible=true]
+しばらく進むと階段があらわれた。[r][l]
+が...!![r][l]
+[cm]
+#謎の声
+ギィィッ！！[r][l]
+バサッバサッ！！[r][l]
+#
+[cm]
+[chara_new name="gago" storage="gago.png" jname="ガーゴイル" width="500" height="500" ]
+[chara_show name="gago" ]
+階段の守護者、ガーゴイルがあらわれた！[r][l]
+[cm]
+なかなかの強敵だ。[r][l]
+どうする？[r][l]
+[cm]
+[layopt layer=message0 visible=false]
+[locate x=100 y=300]
+[button graphic="attack.png" target="*select2_3_1" clickse="../bgm/決定ボタンを押す1.mp3" ][r]
+
+[locate x=750 y=300]
+[button graphic="no_battle.png" target="*select2_3_2" clickse="../bgm/決定ボタンを押す1.mp3" ][r]
+
+[locate x=410 y=550]
+[button graphic="unmei.png" target="*select2_3_3" clickse="../bgm/決定ボタンを押す1.mp3" ][r]
 [s]
 
 *select2_2_3
@@ -339,5 +367,55 @@
 [getrand min="1" max="100"]
 [if exp="tf.rand <= 50"][jump target="*select2_2_1"]
 [else][jump target="*select2_2_2"]
+[endif]
+[s]
+
+*select2_3_1
+[layopt layer=message0 visible=true]
+[cm]
+あなたはナイフでこうげきをしかけた！[r][l]
+[cm]
+[quake count=1 time=400]
+ギャリィッ！！[r][l]
+しかし、石のような皮膚に阻まれダメージが通らない！[r][l]
+#ガーゴイル
+ギャギャギィッ！！ガァッ！！！[r][l]
+[cm]
+[quake count=1 time=400]
+#
+ガーゴイルの鋭い爪があなたの身体を引き裂く！[r][l]
+[chara_hide name="gago" ]
+[jump storage="DeadEnd.ks" target="*END_G2" ]
+[s]
+
+*select2_3_2
+[layopt layer=message0 visible=true]
+[cm]
+こいつにはかてない！[r][l]
+あなたは一目散ににげだした！[r][l]
+[cm]
+#ガーゴイル
+グルギャァッ！！[r][l]
+#
+[cm]
+ガーゴイルはあなたを倒すべく追ってきている！[r][l]
+あなたはどうする？[r][l]
+[cm]
+[layopt layer=message0 visible=false]
+[locate x=100 y=300]
+[button graphic="attack.png" target="*select2_3_1" clickse="../bgm/決定ボタンを押す1.mp3" ][r]
+
+[locate x=750 y=300]
+[button graphic="nigeru.png" target="*select2_3_2" clickse="../bgm/決定ボタンを押す1.mp3" ][r]
+
+[locate x=410 y=550]
+[button graphic="unmei.png" target="*select2_3_3" clickse="../bgm/決定ボタンを押す1.mp3" ][r]
+[s]
+
+*select2_3_3
+[cm]
+[getrand min="1" max="100"]
+[if exp="tf.rand <= 50"][jump target="*select2_3_1"]
+[else][jump target="*select2_3_2"]
 [endif]
 [s]

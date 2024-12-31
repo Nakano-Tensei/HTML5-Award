@@ -1,7 +1,9 @@
 *tutorial
-
+[plugin name="popopo"]
+[popopo frequency="C"]
 [cm]
 [mask]
+[fadeoutbgm time=3000]
 [bg storage="black.png" ]
 [mask_off]
 [position layer=message0 width=900 height=400 top=400 left=70 ]
@@ -168,6 +170,7 @@
 #
 [layopt layer=message0 visible=false]
 [bg storage="black.png" ]
+[eval exp="updateTutorial(1)"]
 [mask_off]
-[jump storage="route.ks"target="*route"  ]
+[jump storage="route.ks" target="*route2"  ]
 [s]
