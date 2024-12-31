@@ -120,3 +120,62 @@ tyrano.plugin.kag.tag.set_mygold = {
         this.kag.ftag.nextOrder(); // 次の命令へ移行
     },
 };
+
+// Firestoreのtutorialを初期値0にリセットする関数
+window.resettutorialToZero = async function () {
+    const ganDocRef = doc(db, "pbl", "gan"); // コレクション名とドキュメントIDを指定
+    try {
+        await setDoc(ganDocRef, { tutorial: 0 }, { merge: true }); // merge: true で他のフィールドは維持
+        console.log("tutorialを初期値0にリセットしました！");
+    } catch (e) {
+        console.error("Firestoreのリセットエラー:", e);
+    }
+};
+
+// tutorialフィールドを増減し、結果をティラノスクリプトに表示する関数
+window.updatetutorial = async function (changeValue) {
+    const ganDocRef = doc(db, "pbl", "gan");
+
+    try {
+        // tutorialフィールドの増減
+        await updateDoc(ganDocRef, {
+            tutorial: increment(changeValue)
+        });
+
+        // 結果メッセージの生成
+        const result = `tutorialを${changeValue > 0 ? "増加" : "減少"}しました！`;
+        console.log(result);
+
+        // ティラノスクリプトに結果を表示
+        tyrano.plugin.kag.ftag.startTag('text', { text: result });
+    } catch (e) {
+        console.error("Firestoreエラー:", e);
+
+        // エラー発生時のメッセージを表示
+        const errorMessage = "エラーが発生しました。";
+        tyrano.plugin.kag.ftag.startTag('text', { text: errorMessage });
+    }
+};
+
+// Firestoreからtutorialを取得し、tf.tutorialに格納するカスタムタグ
+tyrano.plugin.kag.tag.set_tutorial = {
+    async start(pm) {
+        const ganDocRef = doc(db, "pbl", "gan");
+        try {
+            // Firestoreからドキュメントを取得
+            const docSnap = await getDoc(ganDocRef);
+            if (docSnap.exists()) {
+                // dpointをtf変数に格納
+                tyrano.plugin.kag.variable.tf.tutorial = docSnap.data().tutorial;
+                console.log(`tutorialを取得しました: ${docSnap.data().tutorial}`);
+            } else {
+                console.warn("Firestore: ドキュメントが存在しません。");
+                tyrano.plugin.kag.variable.tf.tutorial = null; // 初期化
+            }
+        } catch (e) {
+            console.error("Firestoreエラー:", e);
+            tyrano.plugin.kag.variable.tf.tutorial = null; // 初期化
+        }
+        this.kag.ftag.nextOrder(); // 次の命令へ移行
+    },
+};

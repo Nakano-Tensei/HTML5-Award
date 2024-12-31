@@ -1,20 +1,19 @@
 *start
 [call storage="macro.ks" cond="tf.first == undefined"]
+[playbgm storage="8bit-Prologue01_loop.ogg" ]
+[eval exp="resettutorialToZero()"]
 *title
 
 @layopt layer=message0 visible=false
-
 [image layer="base" page="fore" storage="../bgimage/title_base.png"   ]
 
 [locate x=300 y=380]
-[button graphic="gamestart.png" storage="route.ks"  target="*route"  ]
+[button graphic="gamestart.png" storage="route.ks"  target="*route" clickse="../bgm/決定ボタンを押す1.mp3"  ]
 
 [locate x=300 y=520]
-[button graphic="tutorial.png" storage="tutorial.ks"  target="*tutorial" ]
+[button graphic="tutorial.png" storage="tutorial.ks"  target="*tutorial" clickse="../bgm/決定ボタンを押す1.mp3" ]
 
 [s]
-
-
 
 
 
