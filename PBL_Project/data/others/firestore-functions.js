@@ -29,7 +29,7 @@ window.updateDpoint = async function (changeValue) {
         console.log(result);
 
         // ティラノスクリプトに結果を表示
-        tyrano.plugin.kag.ftag.startTag('text', { text: result });
+        tyrano.plugin.kag.tag.startTag('text', { text: result });
     } catch (e) {
         console.error("Firestoreエラー:", e);
 
@@ -88,7 +88,7 @@ window.updateMygold = async function (changeValue) {
         console.log(result);
 
         // ティラノスクリプトに結果を表示
-        tyrano.plugin.kag.ftag.startTag('text', { text: result });
+        tyrano.plugin.kag.tag.startTag('text', { text: result });
     } catch (e) {
         console.error("Firestoreエラー:", e);
 
@@ -147,7 +147,7 @@ window.updatetutorial = async function (changeValue) {
         console.log(result);
 
         // ティラノスクリプトに結果を表示
-        tyrano.plugin.kag.ftag.startTag('text', { text: result });
+        tyrano.plugin.kag.tag.startTag('text', { text: result });
     } catch (e) {
         console.error("Firestoreエラー:", e);
 
@@ -175,6 +175,72 @@ tyrano.plugin.kag.tag.set_tutorial = {
         } catch (e) {
             console.error("Firestoreエラー:", e);
             tyrano.plugin.kag.variable.tf.tutorial = null; // 初期化
+        }
+        this.kag.ftag.nextOrder(); // 次の命令へ移行
+    },
+};
+
+// Firestoreのtpointを初期値0にリセットする関数
+window.resettpointToZero = async function () {
+    const ganDocRef = doc(db, "pbl", "gan"); // コレクション名とドキュメントIDを指定
+    try {
+        await setDoc(ganDocRef, { tpoint: 0 }, { merge: true }); // merge: true で他のフィールドは維持
+        console.log("tpointを初期値0にリセットしました！");
+    } catch (e) {
+        console.error("Firestoreのリセットエラー:", e);
+    }
+};
+
+// tpointフィールドを増減し、結果をティラノスクリプトに表示する関数
+window.updatetpoint = async function (changeValue) {
+    const ganDocRef = doc(db, "pbl", "gan");
+
+    try {
+        // Firestoreトランザクションを使用してtpointの増減を安全に実行
+        await runTransaction(db, async (transaction) => {
+            const ganDoc = await transaction.get(ganDocRef);
+            if (!ganDoc.exists()) {
+                throw new Error("ドキュメントが存在しません。");
+            }
+
+            const currentTpoint = ganDoc.data().tpoint || 0; // tpointの現在値を取得
+            const newTpoint = currentTpoint + changeValue;
+            transaction.update(ganDocRef, { tpoint: newTpoint });
+        });
+
+        // 結果メッセージの生成
+        const result = `tpointを${changeValue > 0 ? "増加" : "減少"}しました！ (変化値: ${changeValue})`;
+        console.log(result);
+
+        // ティラノスクリプトに結果を表示
+        tyrano.plugin.kag.tag.startTag('text', { text: result });
+    } catch (e) {
+        console.error("Firestoreエラー:", e);
+
+        // エラー発生時のメッセージを表示
+        const errorMessage = "エラーが発生しました。";
+        tyrano.plugin.kag.tag.startTag('text', { text: errorMessage });
+    }
+};
+
+// Firestoreからtpointを取得し、tf.tpointに格納するカスタムタグ
+tyrano.plugin.kag.tag.set_tpoint = {
+    async start(pm) {
+        const ganDocRef = doc(db, "pbl", "gan");
+        try {
+            // Firestoreからドキュメントを取得
+            const docSnap = await getDoc(ganDocRef);
+            if (docSnap.exists()) {
+                // tpointをtf変数に格納
+                tyrano.plugin.kag.variable.tf.tpoint = docSnap.data().tpoint;
+                console.log(`tpointを取得しました: ${docSnap.data().tpoint}`);
+            } else {
+                console.warn("Firestore: ドキュメントが存在しません。");
+                tyrano.plugin.kag.variable.tf.tpoint = 0; // 初期値0に設定
+            }
+        } catch (e) {
+            console.error("Firestoreエラー:", e);
+            tyrano.plugin.kag.variable.tf.tpoint = 0; // 初期値0に設定
         }
         this.kag.ftag.nextOrder(); // 次の命令へ移行
     },

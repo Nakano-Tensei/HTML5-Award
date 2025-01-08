@@ -28,5 +28,5 @@
 *route2
 [cm]
 [playbgm storage="8bit-Prologue01_loop.ogg" ]
-[jump target="**route" ]
+[jump target="*route" ]
 [s]
