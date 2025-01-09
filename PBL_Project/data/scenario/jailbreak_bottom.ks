@@ -3,7 +3,7 @@
 [bg storage="../image/title/dungeon3.jpg" ]
 分かれ道がある。[l][cm]
 
-#たけし
+
 どっちに行こう？[l][cm]
 [locate x=1000 y=100]
 [button graphic="title/right.png"target="*right" width="200"height="200"   ]
@@ -31,10 +31,10 @@
 [cm]
 ダガーを拾った！[l][cm]
 
-#たけし
+
 これは...何かに使えそうだな...[l][cm]
 
-#
+
 たけしはダガーをポーチにしまった。[l][r]
 先へ進もう。[l][cm]
 
@@ -42,10 +42,10 @@
 [s]
 
 *noPickUp
-#たけし
+
 ばっちいからやめとこ！[l][cm]
 
-#
+
 先へ進もう[l][cm]
 [cm]
 [s]

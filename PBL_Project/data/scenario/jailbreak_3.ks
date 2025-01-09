@@ -1,5 +1,6 @@
 *3layer
 [cm]
+[quake count=1 time=400 ]
 [bg storage="rouka1_blue.png" time="1000"  ]
 ....3階層....[l][cm]
 3階層に来た[l][cm]
@@ -15,6 +16,7 @@
 
 *right
 [cm]
+[quake count=1 time=400 ]
 [bg storage="rouka_up_2.png" ]
 もう階段があった[l][r]
 上がろう[l][cm]
@@ -24,6 +26,7 @@
 
 *left
 [cm]
+[quake count=1 time=400 ]
 [bg storage="rouka1_blue.png" time="1000" ]
 [bg storage="boxRoom.png" time="1000" ]
 少し広い部屋に来た[l][r]
@@ -84,7 +87,9 @@
 [bg storage="blueRoom_route1.png" time="700" ]
 [bg storage="blueRoom_route2.png" time="700" ]
 [bg storage="blueRoom_route.png" time="700"  ]
+[quake count=20 time=1000 hmax="20" ]
 ...![l][cm]
+
 正面に通路が出てきた！[l][cm]
 先に進もう[l][cm]
 [bg storage="black.png" ]

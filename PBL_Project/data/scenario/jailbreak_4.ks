@@ -19,16 +19,20 @@
 [s]
 
 *right4
+[cm]
+[quake count=1 time=400 ]
 [bg storage="rouka1.png" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka_up.png" time="1000" ]
 階段があった[l][cm]
 上に進もう[l][cm]
-[wait time="2000" ]
+[quake count=1 time=400 ]
 [jump storage="jailbreak_3.ks" target="*3layer"]
 [s]
 
 *left4
 [cm]
+[quake count=1 time=400 ]
 左へ進んだ[l][cm]
 [bg storage="rouka2.png" time="1000"  ]
 
@@ -55,8 +59,10 @@
 
 *up_t1
 [cm]
-[bg storage="rouka1.png" time="1000" ]
-[bg storage="rouka2.png" time="1000" ]
+[quake count=1 time=400 ]
+[bg storage="rouka1.png" time="700" ]
+[quake count=1 time=400 ]
+[bg storage="rouka2.png" time="700" ]
 
 [locate x=550 y=50]
 [button graphic="title/up.png"target="*up_t2" width="200"height="200" ]
@@ -72,8 +78,9 @@
 *right_t1
 [cm]
 [bg storage="rouka1.png" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka_stop.png" time="1000" ]
-[wait time="2000" ]
+[wait time="1000" ]
 [bg storage="rouka_stop_hole1.png" time="700"]
 [bg storage="rouka_stop_hole2.png" time="700"]
 落とし穴に落ちてしまった...[l][cm]
@@ -83,7 +90,9 @@
 
 *left_t1
 [cm]
+[quake count=1 time=400 ]
 [bg storage="rouka1.png" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka_stop.png" time="1000" ]
 [wait time="2000" ]
 [bg storage="rouka_stop_hole1.png" time="700"]
@@ -97,7 +106,9 @@
 
 *right_t2
 [cm]
+[quake count=1 time=400 ]
 [bg storage="rouka1.png" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka2.png" time="1000" ]
 
 [locate x=550 y=50]
@@ -112,7 +123,9 @@
 
 *up_t2
 [cm]
+[quake count=1 time=400 ]
 [bg storage="rouka1.png" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka_stop.png" time="1000" ]
 [wait time="2000" ]
 [bg storage="rouka_stop_hole1.png" time="700"]
@@ -124,7 +137,9 @@
 
 *left_t2
 [cm]
+[quake count=1 time=400 ]
 [bg storage="rouka1.png" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka_stop.png" time="1000" ]
 [wait time="2000" ]
 [bg storage="rouka_stop_hole1.png" time="700"]
@@ -136,7 +151,9 @@
 
 *up_t3
 [cm]
+[quake count=1 time=400 ]
 [bg storage="rouka1.png" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka2.png" time="1000" ]
 
 [locate x=550 y=50]
@@ -151,7 +168,9 @@
 
 *right_t3
 [cm]
+[quake count=1 time=400 ]
 [bg storage="rouka1.png" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka_stop.png" time="1000" ]
 [wait time="2000" ]
 [bg storage="rouka_stop_hole1.png" time="700"]
@@ -163,7 +182,9 @@
 
 *left_t3
 [cm]
+[quake count=1 time=400 ]
 [bg storage="rouka1.png" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka_stop.png" time="1000" ]
 [wait time="2000" ]
 [bg storage="rouka_stop_hole1.png" time="700"]
@@ -175,7 +196,9 @@
 
 *up_t4
 [cm]
+[quake count=1 time=400 ]
 [bg storage="rouka1.png" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka2.png" time="1000" ]
 
 [locate x=550 y=50]
@@ -191,6 +214,7 @@
 *right_t4
 [cm]
 [bg storage="rouka1.png" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka_stop.png" time="1000" ]
 [wait time="2000" ]
 [bg storage="rouka_stop_hole1.png" time="700"]
@@ -202,7 +226,9 @@
 
 *left_t4
 [cm]
+[quake count=1 time=400 ]
 [bg storage="rouka1.png" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka_stop.png" time="1000" ]
 [wait time="2000" ]
 [bg storage="rouka_stop_hole1.png" time="700"]
@@ -214,7 +240,9 @@
 
 *right_t5
 [cm]
+[quake count=1 time=400 ]
 [bg storage="rouka1.png" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka_stop.png" time="1000" ]
 [wait time="2000" ]
 [bg storage="rouka_stop_hole1.png" time="700"]
@@ -226,7 +254,9 @@
 
 *up_t5
 [cm]
+[quake count=1 time=400 ]
 [bg storage="rouka1.png" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka_stop.png" time="1000" ]
 [wait time="2000" ]
 [bg storage="rouka_stop_hole1.png" time="700"]
@@ -238,7 +268,9 @@
 
 *left_t5
 [cm]
+[quake count=1 time=400 ]
 [bg storage="rouka1.png" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka2.png" time="1000" ]
 
 [locate x=550 y=50]
@@ -253,7 +285,9 @@
 
 *left_t6
 [cm]
+[quake count=1 time=400 ]
 [bg storage="rouka1.png" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka2.png" time="1000" ]
 
 [locate x=550 y=50]
@@ -268,7 +302,9 @@
 
 *right_t7
 [cm]
+[quake count=1 time=400 ]
 [bg storage="rouka1.png" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka_stop.png" time="1000" ]
 [wait time="2000" ]
 [bg storage="rouka_stop_hole1.png" time="700"]
@@ -280,7 +316,9 @@
 
 *left_t7
 [cm]
+[quake count=1 time=400 ]
 [bg storage="rouka1.png" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka_stop.png" time="1000" ]
 [wait time="2000" ]
 [bg storage="rouka_stop_hole1.png" time="700"]
@@ -292,7 +330,9 @@
 
 *up_t7
 [cm]
+[quake count=1 time=400 ]
 [bg storage="rouka1.png" time="1000" ]
+[quake count=1 time=400 ]
 
 [bg storage="../image/rouka_stop_box.png" time="2000"  ]
 
@@ -307,6 +347,7 @@
 
 はしごが現れた[l][r]
 先へ進もう[l][cm]
+[quake count=1 time=400 ]
 [bg storage="black.png" ]
 [jump storage="jailbreak_3.ks" target="*3layer"  ]
 [s]

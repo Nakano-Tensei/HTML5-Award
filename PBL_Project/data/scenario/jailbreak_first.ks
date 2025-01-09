@@ -6,8 +6,7 @@
 [mask_off]
 
 @layopt layer = message0 visible="true" 
-俺はたけし。[l][r]
-わけあって洞窟の奥深くにある牢獄に投獄されている。[l][r]
+俺はわけあって洞窟の奥深くにある牢獄に投獄されている。[l][r]
 地面は固いし飯は不味いし退屈だ.......。[l][r]
 外の空気吸いたい....。[l][r]
 ...というわけで、[r]
@@ -21,38 +20,38 @@
 
 
 [chara_config ptext="chara_name_area"]
-#たけし
-脱獄しよう!![l][cm]
+
+脱獄しすることにした。[l][cm]
 [wait time="2000" ]
 ...!![l][cm]
 
-誰？おまえ[l][cm]
+誰か近づいてくる。[l][cm]
 [wait time="2000" ]
 
 [chara_new name="tensei" storage="tensei.png" jname="てんせい"  ]
 [chara_show name="tensei" ]
-#てんせい
-俺、てんせい！[l][r]
-ただの通りすがりさ！[l]
+#ワナー
+俺の名はワナー。[l][r]
+ただの通りすがりさ。[l]
 君この洞窟から出たいんだろう？[l][r]
-牢屋のカギを開けてあげるよ！[l][cm]
+この俺が牢屋のカギを開けてやろう！[l][cm]
 
-#たけし
+#
 え？[l][cm]
 
-#てんせい
+#ワナー
 じゃあがんばれよ！[l][cm]
 
 [chara_hide name="tensei" ]
-#
-てんせいは去っていった...[l][cm]
-
-
-
-#たけし
-.....よし...!行くか！[l][cm]
 
 #
+ワナーは去っていった...[l][cm]
+
+
+[l][cm]
+
+
+
 たけしは牢屋から出て、外を目指して進み始めた。[l][cm]
 [jump storage="jailbreak_bottom.ks" target="*bottom" ]
 [s]
