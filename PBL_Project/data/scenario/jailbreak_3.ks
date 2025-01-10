@@ -1,10 +1,12 @@
 *3layer
 [cm]
-[bg storage="rouka1_blue.png" time="1000"  ]
+[quake count=1 time=400 ]
+[bg storage="rouka1_blue.png" time="700"  ]
 ....3階層....[l][cm]
 3階層に来た[l][cm]
-[bg storage="rouka4_blue.png" time="1000" ]
-[wait time="1000" ]
+[quake count=1 time=400 ]
+[bg storage="rouka4_blue.png" time="700" ]
+
 分かれ道だ[l][r]
 どっちへ行こうか?[l][cm]
 [locate x=1000 y=100]
@@ -15,17 +17,21 @@
 
 *right
 [cm]
-[bg storage="rouka_up_2.png" ]
+[quake count=1 time=400 ]
+[bg storage="rouka_up_2.png" time="700" ]
 もう階段があった[l][r]
 上がろう[l][cm]
-[bg storage="black.png" ]
+[quake count=1 time=400 ]
+[bg storage="black.png" time="700" ]
 [jump storage="jailbreak_2.ks" target="*layer2" ]
 [s]
 
 *left
 [cm]
-[bg storage="rouka1_blue.png" time="1000" ]
-[bg storage="boxRoom.png" time="1000" ]
+[quake count=1 time=400 ]
+[bg storage="rouka1_blue.png" time="700" ]
+[quake count=1 time=400 ]
+[bg storage="boxRoom.png" time="700" ]
 少し広い部屋に来た[l][r]
 正面に宝箱が３つ並んでいる[l][r]
 どれを開けようか[l][cm]
@@ -75,18 +81,22 @@
 *Safe
 [cm]
 ...![l][r]
-[wait time="1000" ]
+[wait time="700" ]
 中に何か入っている！[l][cm]
-[wait time="1000" ]
+[wait time="700" ]
 [r]
 「謎の置物」を手に入れた[l][cm]
-[wait time="1000" ]
+[quake count=20 time=1000 hmax="20" ]
+...![l][cm]
+
 [bg storage="blueRoom_route1.png" time="700" ]
 [bg storage="blueRoom_route2.png" time="700" ]
 [bg storage="blueRoom_route.png" time="700"  ]
-...![l][cm]
+
+
 正面に通路が出てきた！[l][cm]
 先に進もう[l][cm]
+[quake count=1 time=400 ]
 [bg storage="black.png" ]
 [jump storage="jailbreak_2.ks" target="*layer2" ]
 [s]
