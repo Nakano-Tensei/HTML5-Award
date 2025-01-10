@@ -1,6 +1,6 @@
 *layer2
 [cm]
-[bg storage="rouka4_green.png" ]
+[bg storage="rouka4_green.png"time="700"  ]
 ....2階層....[l][cm]
 [wait time="1000" ]
 
@@ -13,28 +13,31 @@
 
 *left
 [cm]
-[bg storage="rouka_up_2_green.png" ]
+[quake count=1 time=400 ]
+[bg storage="rouka_up_2_green.png"time="700"  ]
 階段があった[l][r]
 上がろう[l][cm]
 [quake count="3" time="3000" ]
-[bg storage="black.png" ]
+[bg storage="black.png"time="700"  ]
 [jump storage="jailbreak_1.ks" target="*layer1" ]
 [s]
 
 *right
-[bg storage="rouka_up_2_green.png" ]
+[quake count=1 time=400 ]
+[bg storage="rouka_up_2_green.png"time="700"  ]
 この辺に何かある気がする...[l][cm]
 進んでみるよう[l][cm]
-[quake count="3" time="3000" ]
+[quake count=1 time=400 ]
 
-[bg storage="rouka1_green_find.png" ]
+[bg storage="rouka1_green_find.png"time="700"  ]
 [link target="*go1"]進む[endlink][r]
 [link target="*find1"]調べる[endlink][r]
 [s]
 
 *go1
 [cm]
-[bg storage="rouka1_green_find.png" ]
+[quake count=1 time=400 ]
+[bg storage="rouka1_green_find.png"time="700"  ]
 [link target="*go2"]進む[endlink][r]
 [link target="*find1"]調べる[endlink][r]
 [s]
@@ -42,18 +45,20 @@
 
 *find1
 [cm]
-[quake count="1" time="1000" ]
-[bg storage="black.png" time="1000"  ]
+[quake count=1 time=400 ]
+[bg storage="black.png" time="700"  ]
 周辺を調べてみた...[l][cm]
 [wait time="2000"]
-[bg storage="rouka_stop_green.png"time="1000"  ]
+[bg storage="rouka_stop_green.png"time="700"  ]
 何もなかった[l][cm]
 先に進もう[l][cm]
+[quake count=1 time=400 ]
 [jump target="*go2" ]
 [s]
 
 *go2
 [cm]
+[quake count=1 time=400 ]
 [bg storage="rouka1_green_find.png" ]
 [link target="*go3"]進む[endlink][r]
 [link target="*find2"]調べる[endlink][r]
@@ -61,11 +66,11 @@
 
 *find2
 [cm]
-[quake count="1" time="1000" ]
-[bg storage="black.png" time="1000"  ]
+[quake count=1 time=400 ]
+[bg storage="black.png" time="700"  ]
 周辺を調べてみた...[l][cm]
 [wait time="2000"]
-[bg storage="rouka_stop_green.png" time="1000"]
+[bg storage="rouka_stop_green.png" time="700"]
 何もなかった[l][cm]
 先に進もう[l][cm]
 [jump target="*go3" ]
@@ -73,7 +78,7 @@
 
 *go3
 [cm]
-[quake count="1" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka1_green_find.png" ]
 [link target="*go4"]進む[endlink][r]
 [link target="*find3"]調べる[endlink][r]
@@ -81,19 +86,20 @@
 
 *find3
 [cm]
-[quake count="1" time="1000" ]
-[bg storage="black.png" time="1000"  ]
+[quake count=1 time=400 ]
+[bg storage="black.png" time="700"  ]
 周辺を調べてみた...[l][cm]
 [wait time="2000"]
-[bg storage="rouka_stop_green.png"time="1000"  ]
+[bg storage="rouka_stop_green.png"time="700"  ]
 何もなかった[l][cm]
 先に進もう[l][cm]
+[quake count=1 time=400 ]
 [jump target="*go4" ]
 [s]
 
 *go4
 [cm]
-[quake count="1" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka1_green_find.png" ]
 [link target="*go5"]進む[endlink][r]
 [link target="*find4"]調べる[endlink][r]
@@ -101,8 +107,8 @@
 
 *find4
 [cm]
-[quake count="1" time="1000" ]
-[bg storage="black.png" time="1000"  ]
+[quake count=1 time=400 ]
+[bg storage="black.png" time="7000"  ]
 周辺を調べてみた...[l][cm]
 [wait time="2000"]
 [bg storage="rouka_stop_green.png"time="1000"  ]
@@ -113,7 +119,7 @@
 
 *go5
 [cm]
-[quake count="1" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka1_green_find.png" ]
 [link target="*go6"]進む[endlink][r]
 [link target="*find5"]調べる[endlink][r]
@@ -121,19 +127,20 @@
 
 *find5
 [cm]
-[quake count="1" time="1000" ]
-[bg storage="black.png" time="1000"  ]
+[quake count=1 time=400 ]
+[bg storage="black.png" time="700"  ]
 周辺を調べてみた...[l][cm]
 [wait time="2000"]
 [bg storage="rouka_stop_green.png"time="1000"  ]
 何もなかった[l][cm]
 先に進もう[l][cm]
+[quake count=1 time=400 ]
 [jump target="*go6" ]
 [s]
 
 *go6
 [cm]
-[quake count="1" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka1_green_find.png" ]
 [link target="*go7"]進む[endlink][r]
 [link target="*find6"]調べる[endlink][r]
@@ -141,19 +148,20 @@
 
 *find6
 [cm]
-[quake count="1" time="1000" ]
-[bg storage="black.png" time="1000"  ]
+[quake count=1 time=400 ]
+[bg storage="black.png" time="700"  ]
 周辺を調べてみた...[l][cm]
 [wait time="2000"]
 [bg storage="rouka_stop_green.png"time="1000"  ]
 何もなかった[l][cm]
 先に進もう[l][cm]
+[quake count=1 time=400 ]
 [jump target="*go7" ]
 [s]
 
 *go7
 [cm]
-[quake count="1" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka1_green_find.png" ]
 [link target="*go8"]進む[endlink][r]
 [link target="*find7"]調べる[endlink][r]
@@ -161,7 +169,7 @@
 
 *find7
 [cm]
-[quake count="1" time="1000" ]
+[quake count=1 time=400 ]
 周辺を調べてみた...[l][cm]
 [wait time="2000"]
 [bg storage="totem1.png"]
@@ -173,13 +181,13 @@
 [bg storage="rouka_route_green.png" time="700"  ]
 次の階層への道が現れた[l][r]
 すすもう[l][cm]
-[quake count="1" time="1000" ]
+[quake count=1 time=400 ]
 [jump storage="jailbreak_1.ks" target="*layer1"  ]
 [s]
 
 *go8
 [cm]
-[quake count="1" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka1_green_find.png" ]
 [link target="*go9"]進む[endlink][r]
 [link target="*find8"]調べる[endlink][r]
@@ -187,19 +195,20 @@
 
 *find8
 [cm]
-[quake count="1" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="black.png" time="1000"  ]
 周辺を調べてみた...[l][cm]
 [wait time="2000"]
 [bg storage="rouka_stop_green.png"time="1000"  ]
 何もなかった[l][cm]
 先に進もう[l][cm]
+[quake count=1 time=400 ]
 [jump target="*go9" ]
 [s]
 
 *go9
 [cm]
-[quake count="1" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka1_green_find.png" ]
 [link target="*go10"]進む[endlink][r]
 [link target="*find9"]調べる[endlink][r]
@@ -207,19 +216,20 @@
 
 *find9
 [cm]
-[quake count="1" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="black.png" time="1000"  ]
 周辺を調べてみた...[l][cm]
 [wait time="2000"]
 [bg storage="rouka_stop_green.png"time="1000"  ]
 何もなかった[l][cm]
 先に進もう[l][cm]
+[quake count=1 time=400 ]
 [jump target="*go10" ]
 [s]
 
 *go10
 [cm]
-[quake count="1" time="1000" ]
+[quake count=1 time=400 ]
 [bg storage="rouka_stop_green.png" time="1000" ]
 [quake count=20 time=1000 hmax="20" ]
 ..![l][cm]
