@@ -41,6 +41,7 @@
 [s]
 
 *back_attack
+
 [cm]
 [quake count=1 time=400 ]
 モンスターの背中をナイフで突き刺した[l][r]
